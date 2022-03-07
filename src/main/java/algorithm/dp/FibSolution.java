@@ -9,7 +9,7 @@ import java.util.Map;
  * @Date 2021-9-28
  * @Version 1.0
  */
-public class SimpleSolution {
+public class FibSolution {
 
     /**
      * 递归解法 01 复杂度计算
@@ -26,11 +26,25 @@ public class SimpleSolution {
         return fib01(n - 1) + fib01(n - 2);
     }
 
+    /**
+     * 自底向上，利用数组，以空间交换时间
+     */
+    public int fibArrayDp(int n) {
+        int[] a = new int[n + 1];
+        a[0] = 0;
+        a[1] = 1;
+        for (int i = 2; i < n + 1; i++) {
+            a[i] = a[i - 1] + a[i - 2];
+        }
+        return a[n - 1];
+    }
+
     Map<Integer, Integer> temp = new HashMap<>();
 
     /**
      * 已计算过的值存在map中，那么只要计算过的就都只会计算一次，递归时只会计算n个值，空间复杂度就是O（n）
      * 这个是自顶向下的解法
+     * 递归+记忆搜索
      */
     public int fib02(int n) {
         if (n == 0) {
@@ -60,14 +74,17 @@ public class SimpleSolution {
      * 逐层计算，计算到第n层即可返回结果
      */
     public int fib(int n) {
-        if (n <= 1) {
-            return 1;
+        if (n==1){
+            return 0;
         }
         if (n == 2) {
-            return 2;
+            return 1;
         }
-        int a = 1;
-        int b = 2;
+        /*if (n == 4) {
+            return 2;
+        }*/
+        int a = 0;
+        int b = 1;
         int temp = 0;
         // 从边界值开始计算，到n层停止，返回值
         for (int i = 3; i <= n; i++) {
@@ -77,5 +94,10 @@ public class SimpleSolution {
             b = temp;
         }
         return temp;
+    }
+
+    public static void main(String[] args) {
+        FibSolution fib = new FibSolution();
+        System.out.println(fib.fib(9));
     }
 }
