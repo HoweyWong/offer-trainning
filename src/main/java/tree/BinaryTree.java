@@ -1,7 +1,5 @@
 package tree;
 
-import sun.reflect.generics.tree.Tree;
-
 import java.util.concurrent.LinkedBlockingQueue;
 
 /**
@@ -15,9 +13,7 @@ public class BinaryTree {
 
     @Override
     public String toString() {
-        return "BinaryTree{" +
-                "root=" + root +
-                '}';
+        return "BinaryTree{" + "root=" + root + '}';
     }
 
     public void insertNode(int data) {
@@ -38,52 +34,56 @@ public class BinaryTree {
         }
         return node;
     }
+
     /**
      * 前序遍历
      */
-    public void preOrderTra(TreeNode node){
-        if (node==null){
+    public void preOrderTra(TreeNode node) {
+        if (node == null) {
             return;
         }
         System.out.println(node.data);
         preOrderTra(node.leftChild);
         preOrderTra(node.rightChild);
     }
+
     /**
      * 中序
      */
-    public void midOrderTra(TreeNode node){
-        if (node==null){
+    public void midOrderTra(TreeNode node) {
+        if (node == null) {
             return;
         }
         midOrderTra(node.leftChild);
         System.out.println(node.data);
         midOrderTra(node.rightChild);
     }
+
     /**
      * 后序
      */
-    public void postOrderTra(TreeNode node){
-        if (node==null){
+    public void postOrderTra(TreeNode node) {
+        if (node == null) {
             return;
         }
         postOrderTra(node.leftChild);
         postOrderTra(node.rightChild);
         System.out.println(node.data);
     }
+
     /**
      * 广度优先，层序遍历
      */
-    public void levelTra(TreeNode node){
+    public void levelTra(TreeNode node) {
         LinkedBlockingQueue<TreeNode> queue = new LinkedBlockingQueue<>();
         queue.offer(node);
-        while (!queue.isEmpty()){
+        while (!queue.isEmpty()) {
             TreeNode leaf = queue.poll();
             System.out.println(leaf.data);
-            if (leaf.leftChild!=null){
+            if (leaf.leftChild != null) {
                 queue.offer(leaf.leftChild);
             }
-            if (leaf.rightChild!=null){
+            if (leaf.rightChild != null) {
                 queue.offer(leaf.rightChild);
             }
         }
