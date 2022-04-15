@@ -6,7 +6,7 @@ import java.util.Stack;
  * @Date 2021-8-15
  * @Version 1.0
  */
-public class listnode {
+public class ListNodeCp {
 
     /**
      * 传入链表头结点，利用栈把所有节点放进去，实现倒序打印
