@@ -1,4 +1,4 @@
-package algorithm.dp;
+package dp;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -74,7 +74,7 @@ public class FibSolution {
      * 逐层计算，计算到第n层即可返回结果
      */
     public int fib(int n) {
-        if (n==1){
+        if (n == 1) {
             return 0;
         }
         if (n == 2) {

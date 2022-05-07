@@ -1,4 +1,4 @@
-package algorithm.dp.greedy;
+package dp.greedy;
 
 /**
  * @Description

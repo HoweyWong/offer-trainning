@@ -1,4 +1,4 @@
-package algorithm.dp.algorithm.normal;
+package dp.normal;
 
 /**
  * @Description

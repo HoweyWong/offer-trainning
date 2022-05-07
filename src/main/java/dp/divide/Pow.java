@@ -1,4 +1,4 @@
-package algorithm.dp.divide;
+package dp.divide;
 
 /**
  * @Description 某数的N次幂，分治法
@@ -23,6 +23,6 @@ public class Pow {
 
     public static void main(String[] args) {
         Pow pow = new Pow();
-        System.out.println(pow.pow(2,10));
+        System.out.println(pow.pow(2, 10));
     }
 }
