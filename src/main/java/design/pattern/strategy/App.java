@@ -1,7 +1,4 @@
-package design.strategy;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+package design.pattern.strategy;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -13,12 +10,16 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class App {
-    private static final Logger LOGGER = LoggerFactory.getLogger(DragonSlayingStrategy.class);
     private static final String RED_DRAGON_EMERGES = "红龙出现了。";
+    private static final String GREEN_DRAGON_SPOTTED = "绿龙出现了。";
+    private static final String BLACK_DRAGON_LANDS = "黑龙着陆了。";
 
     public static void main(String[] args) {
-        LOGGER.info(RED_DRAGON_EMERGES);
+        log.info(RED_DRAGON_EMERGES);
         var slayer = new DragonSlayer(new MeleeStrategy());
+        slayer.goToBattle();
+        log.info(GREEN_DRAGON_SPOTTED);
+        slayer.changeStrategy(new ProjectileStrategy());
         slayer.goToBattle();
     }
 }
