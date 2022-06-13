@@ -34,7 +34,7 @@ public class ThreadPoolExecutorDemo {
                 KEEP_ALIVE_TIME,
                 UNIT, WORK_QUEUE,
                 Executors.defaultThreadFactory(),
-                new ThreadPoolExecutor.DiscardPolicy());
+                new ThreadPoolExecutor.CallerRunsPolicy());
         for (int i = 0; i < 10; i++) {
             MyRunnable worker = new MyRunnable("worker" + i);
             executor.execute(worker);
