@@ -78,7 +78,7 @@ public class MergeTwoLists {
      * 时间复杂度O(n+m)
      * 空间复杂度O(n+m)，每次递归占用栈空间
      */
-    public ListNode mergeTwoListsCur(ListNode list1, ListNode list2) {
+    public static ListNode mergeTwoListsCur(ListNode list1, ListNode list2) {
         if (list1 == null) {
             return list2;
         } else if (list2 == null) {
@@ -95,7 +95,7 @@ public class MergeTwoLists {
     /**
      * 迭代实现：时间复杂度，两链表长度O（n+m），空间复杂度O(1)
      */
-    public ListNode mergeTwoListsIte(ListNode list1, ListNode list2) {
+    public static ListNode mergeTwoListsIte(ListNode list1, ListNode list2) {
         ListNode preHead = new ListNode(-1);
 
         ListNode prev = preHead;
@@ -117,12 +117,10 @@ public class MergeTwoLists {
     }
 
     public static void main(String[] args) {
-        ListNode listNode1 = new ListNode(-9, new ListNode(3));
-        ListNode listNode2 = new ListNode(5, new ListNode(7));
-        MergeTwoLists lists = new MergeTwoLists();
-        ListNode listNode3 = lists.mergeTwoLists(listNode1, listNode2);
-//        ListNode listNode4 = lists.mergeTwoLists(new ListNode(1), new ListNode(2));
-        log.info(listNode3.toString());
+        ListNode list1 = ListNode.fill(6);
+        ListNode list2 = ListNode.fill(6);
+        ListNode listNode = mergeTwoListsCur(list1, list2);
+        ListNode.print(listNode);
     }
 }
 
