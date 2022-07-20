@@ -75,46 +75,45 @@ public class MergeTwoLists {
 
     /**
      * 递归方式实现
-     *
-     * @param l1
-     * @param l2
-     * @return list.ListNode
-     * @author huanghao
-     * @date 2022/4/15 14:23
+     * 时间复杂度O(n+m)
+     * 空间复杂度O(n+m)，每次递归占用栈空间
      */
-    public ListNode mergeTwoListsCur(ListNode l1, ListNode l2) {
-        if (l1 == null) {
-            return l2;
-        } else if (l2 == null) {
-            return l1;
-        } else if (l1.val < l2.val) {
-            l1.next = mergeTwoListsCur(l1.next, l2);
-            return l1;
+    public ListNode mergeTwoListsCur(ListNode list1, ListNode list2) {
+        if (list1 == null) {
+            return list2;
+        } else if (list2 == null) {
+            return list1;
+        } else if (list1.val < list2.val) {
+            list1.next = mergeTwoListsCur(list1.next, list2);
+            return list1;
         } else {
-            l2.next = mergeTwoListsCur(l1, l2.next);
-            return l2;
+            list2.next = mergeTwoListsCur(list1, list2.next);
+            return list2;
         }
     }
 
-    public ListNode mergeTwoListsIte(ListNode l1, ListNode l2) {
-        ListNode prehead = new ListNode(-1);
+    /**
+     * 迭代实现：时间复杂度，两链表长度O（n+m），空间复杂度O(1)
+     */
+    public ListNode mergeTwoListsIte(ListNode list1, ListNode list2) {
+        ListNode preHead = new ListNode(-1);
 
-        ListNode prev = prehead;
-        while (l1 != null && l2 != null) {
-            if (l1.val <= l2.val) {
-                prev.next = l1;
-                l1 = l1.next;
+        ListNode prev = preHead;
+        while (list1 != null && list2 != null) {
+            if (list1.val <= list2.val) {
+                prev.next = list1;
+                list1 = list1.next;
             } else {
-                prev.next = l2;
-                l2 = l2.next;
+                prev.next = list2;
+                list2 = list2.next;
             }
             prev = prev.next;
         }
 
         // 合并后 l1 和 l2 最多只有一个还未被合并完，我们直接将链表末尾指向未合并完的链表即可
-        prev.next = l1 == null ? l2 : l1;
+        prev.next = list1 == null ? list2 : list1;
 
-        return prehead.next;
+        return preHead.next;
     }
 
     public static void main(String[] args) {
