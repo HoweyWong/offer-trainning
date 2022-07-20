@@ -23,6 +23,15 @@ class ListNode {
         this.next = next;
     }
 
+    public static ListNode addLast(ListNode head, ListNode next) {
+        ListNode result = head;
+        while (head.next != null) {
+            head = head.next;
+        }
+        head.next = next;
+        return result;
+    }
+
     @Override
     public String toString() {
         return "ListNode{" +
