@@ -51,6 +51,10 @@ public class DeleteDuplicatesListII {
         return head;
     }
 
+    /**
+     * 时间复杂度O（n）
+     * 空间复杂度O（1）,常量级别
+     */
     static ListNode deleteDuplicatesOpz(ListNode head) {
         if (head == null) {
             return null;
