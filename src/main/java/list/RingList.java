@@ -12,7 +12,7 @@ public class RingList {
             return false;
         }
         Node slow = head;
-        Node fast = head.next;
+        Node fast = head;
         while (fast != null && fast.next != null) {
             if (slow == fast) {
                 return true;

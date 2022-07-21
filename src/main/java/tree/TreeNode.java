@@ -14,4 +14,13 @@ public class TreeNode {
     public TreeNode(int data) {
         this.data = data;
     }
+
+    public TreeNode(TreeNode leftChild, TreeNode rightChild, int data) {
+        this.leftChild = leftChild;
+        this.rightChild = rightChild;
+        this.data = data;
+    }
+
+    public TreeNode() {
+    }
 }
