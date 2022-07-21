@@ -26,7 +26,11 @@ public class DeleteDuplicatesListI {
     public static void main(String[] args) {
         ListNode listNode = ListNode.fill(6);
         ListNode node = new ListNode(5);
+        ListNode node2 = new ListNode(5);
+        ListNode node3 = new ListNode(5);
         listNode = ListNode.addLast(listNode, node);
+        listNode = ListNode.addLast(listNode, node2);
+        listNode = ListNode.addLast(listNode, node3);
         ListNode.print(listNode);
         ListNode.print(deleteDuplicates(listNode));
     }
