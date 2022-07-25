@@ -42,7 +42,7 @@ public class BinarySortTree {
         if (node == null) {
             return;
         }
-        System.out.println(node.data);
+        System.out.print(node.data + " ");
         preOrderTra(node.leftChild);
         preOrderTra(node.rightChild);
     }
@@ -55,7 +55,7 @@ public class BinarySortTree {
             return;
         }
         midOrderTra(node.leftChild);
-        System.out.println(node.data);
+        System.out.print(node.data + " ");
         midOrderTra(node.rightChild);
     }
 
@@ -68,7 +68,7 @@ public class BinarySortTree {
         }
         postOrderTra(node.leftChild);
         postOrderTra(node.rightChild);
-        System.out.println(node.data);
+        System.out.print(node.data + " ");
     }
 
     /**
@@ -79,7 +79,7 @@ public class BinarySortTree {
         queue.offer(node);
         while (!queue.isEmpty()) {
             TreeNode leaf = queue.poll();
-            System.out.println(leaf.data);
+            System.out.print(leaf.data + " ");
             if (leaf.leftChild != null) {
                 queue.offer(leaf.leftChild);
             }
@@ -98,12 +98,17 @@ public class BinarySortTree {
         tree.insertNode(9);
         tree.insertNode(12);
         System.out.println(tree);
+        System.out.print("preOrderTra：");
+
         tree.preOrderTra(tree.root);
-        System.out.println("==============================================================");
+        System.out.println();
+        System.out.print("midOrderTra：");
         tree.midOrderTra(tree.root);
-        System.out.println("==============================================================");
+        System.out.println();
+        System.out.print("postOrderTra：");
         tree.postOrderTra(tree.root);
-        System.out.println("==============================================================");
+        System.out.println();
+        System.out.print("levelTra：");
         tree.levelTra(tree.root);
     }
 }
