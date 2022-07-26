@@ -39,7 +39,7 @@ public class MaxProfit {
         int[] dp = new int[prices.length];
         // 第一天交易利润为0
         dp[0] = 0;
-        // 递推公式 dp[i] =
+        // 递推公式 dp[i] = max(dp[i-1],prices[i]-cost);
         // 初始成本为第一天买入价格
         int cost = prices[0];
         for (int i = 1; i < prices.length; i++) {

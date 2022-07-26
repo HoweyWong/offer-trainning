@@ -8,6 +8,11 @@ package list;
  * @date 2022/7/21 16:21
  */
 public class DetectCycle {
+    /**
+     * a+n(b+c)+b = a+(n+1)b+nc = 2(a+b)
+     * a = (n-1)(b+c)
+     * 利用数学关系获得环形节点的位置，三个指针，快慢指针相遇后，原指针开始走，跟慢指针第一次相遇，必定是环形入口
+     */
     public static ListNode detectCycle(ListNode head) {
         if (head == null) {
             return null;
