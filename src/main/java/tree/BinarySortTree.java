@@ -110,5 +110,7 @@ public class BinarySortTree {
         System.out.println();
         System.out.print("levelTra：");
         tree.levelTra(tree.root);
+        System.out.println();
+        System.out.println("LowestCommonAncestor:" + LowestCommonAncestor.lowestCommonAncestor(tree.root, new TreeNode(7), new TreeNode(9)));
     }
 }

@@ -23,4 +23,12 @@ public class TreeNode {
 
     public TreeNode() {
     }
+
+    @Override
+    public String toString() {
+        return "TreeNode{data=" + data +
+                ", leftChild=" + leftChild.data +
+                ", rightChild=" + rightChild.data +
+                '}';
+    }
 }
