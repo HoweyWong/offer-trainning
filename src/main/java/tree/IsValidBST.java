@@ -51,14 +51,14 @@ public class IsValidBST {
         while (!queue.isEmpty()) {
             TreeNode node = queue.poll();
             if (node.leftChild != null) {
-                if (node.leftChild.data > node.data) {
+                if (node.leftChild.data >= node.data) {
                     return false;
                 } else {
                     queue.offer(node.leftChild);
                 }
             }
             if (node.rightChild != null) {
-                if (node.rightChild.data < node.data) {
+                if (node.rightChild.data <= node.data) {
                     return false;
                 } else {
                     queue.offer(node.rightChild);
