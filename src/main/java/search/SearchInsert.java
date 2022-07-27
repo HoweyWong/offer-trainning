@@ -15,12 +15,6 @@ public class SearchInsert {
     static int searchInsert(int[] nums, int target) {
         int n = nums.length;
         int low = 0, high = n - 1, mid;
-        /*if (target < nums[low]) {
-            return 0;
-        }
-        if (target > nums[high]) {
-            return n;
-        }*/
         while (low <= high) {
             mid = low + (high - low) / 2;
             if (target > nums[mid]) {
