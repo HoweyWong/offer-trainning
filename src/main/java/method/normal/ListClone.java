@@ -1,4 +1,4 @@
-package dp.normal;
+package method.normal;
 
 /**
  * @Description

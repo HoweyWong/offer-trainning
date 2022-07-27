@@ -1,4 +1,4 @@
-package dp.greedy;
+package method.greedy;
 
 /**
  * @Description

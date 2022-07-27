@@ -1,4 +1,4 @@
-package dp.divide;
+package method.divide;
 
 /**
  * @Description 某数的N次幂，分治法
