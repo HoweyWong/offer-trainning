@@ -1,7 +1,8 @@
 package design.pattern.strategy;
 
 /**
- * @Description
+ * 关键是changeStrategy提供了一个动态传入策略，并更改为对应策略的方法
+ *
  * @Author huanghao
  * @Date 2022-4-6
  * @Version 1.0

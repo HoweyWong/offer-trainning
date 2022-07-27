@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * ClubbedTroll 木棍
+ * 提供一个动态构造器，根据传入的对象，赋值给decorator变量，从而在本类的方法中进行装饰
  *
  * @author huanghao
  * @version 1.0
