@@ -23,11 +23,11 @@ public class CBTInserter {
         int i = 0;
         while (i < arrayQueue.size()) {
             TreeNode cur = arrayQueue.get(i);
-            if (cur.leftChild != null) {
-                arrayQueue.add(cur.leftChild);
+            if (cur.left != null) {
+                arrayQueue.add(cur.left);
             }
-            if (cur.rightChild != null) {
-                arrayQueue.add(cur.rightChild);
+            if (cur.right != null) {
+                arrayQueue.add(cur.right);
             }
             i++;
         }
@@ -35,17 +35,17 @@ public class CBTInserter {
 
     public int insert(int value) {
         TreeNode node = new TreeNode(value);
-        while (arrayQueue.get(idx).leftChild != null && arrayQueue.get(idx).rightChild != null) {
+        while (arrayQueue.get(idx).left != null && arrayQueue.get(idx).right != null) {
             idx++;
         }
         TreeNode cur = arrayQueue.get(idx);
-        if (cur.leftChild == null) {
-            cur.leftChild = node;
-        } else if (cur.rightChild == null) {
-            cur.rightChild = node;
+        if (cur.left == null) {
+            cur.left = node;
+        } else if (cur.right == null) {
+            cur.right = node;
         }
         arrayQueue.add(node);
-        return cur.data;
+        return cur.val;
     }
 
     public TreeNode getRoot() {
@@ -57,12 +57,12 @@ public class CBTInserter {
         queue.offer(root);
         while (!queue.isEmpty()) {
             TreeNode node = queue.poll();
-            System.out.print(node.data + " ");
-            if (node.leftChild != null) {
-                queue.offer(node.leftChild);
+            System.out.print(node.val + " ");
+            if (node.left != null) {
+                queue.offer(node.left);
             }
-            if (node.rightChild != null) {
-                queue.offer(node.rightChild);
+            if (node.right != null) {
+                queue.offer(node.right);
             }
         }
         System.out.println();

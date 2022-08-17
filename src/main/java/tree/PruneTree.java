@@ -12,9 +12,9 @@ public class PruneTree {
         if (root == null) {
             return null;
         }
-        root.leftChild = pruneTree(root.leftChild);
-        root.rightChild = pruneTree(root.rightChild);
-        if (root.leftChild == null && root.rightChild == null && root.data == 0) {
+        root.left = pruneTree(root.left);
+        root.right = pruneTree(root.right);
+        if (root.left == null && root.right == null && root.val == 0) {
             return null;
         }
         return root;

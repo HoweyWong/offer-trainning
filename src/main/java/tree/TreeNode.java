@@ -7,18 +7,18 @@ package tree;
  * @Version 1.0
  */
 public class TreeNode {
-    TreeNode leftChild;
-    TreeNode rightChild;
-    int data;
+    TreeNode left;
+    TreeNode right;
+    int val;
 
-    public TreeNode(int data) {
-        this.data = data;
+    public TreeNode(int val) {
+        this.val = val;
     }
 
-    public TreeNode(TreeNode leftChild, TreeNode rightChild, int data) {
-        this.leftChild = leftChild;
-        this.rightChild = rightChild;
-        this.data = data;
+    public TreeNode(TreeNode left, TreeNode right, int val) {
+        this.left = left;
+        this.right = right;
+        this.val = val;
     }
 
     public TreeNode() {
@@ -26,9 +26,9 @@ public class TreeNode {
 
     @Override
     public String toString() {
-        return "TreeNode{data=" + data +
-                ", leftChild=" + leftChild.data +
-                ", rightChild=" + rightChild.data +
+        return "TreeNode{data=" + val +
+                ", leftChild=" + left.val +
+                ", rightChild=" + right.val +
                 '}';
     }
 }

@@ -23,8 +23,8 @@ public class BinaryTree {
         if (node == null) {
             return new TreeNode(data[index]);
         }
-        node.leftChild = insert(node.leftChild, data);
-        node.rightChild = insert(node.rightChild, data);
+        node.left = insert(node.left, data);
+        node.right = insert(node.right, data);
         return node;
     }
 
@@ -33,9 +33,9 @@ public class BinaryTree {
         if (a[index] != '#') {
             root = new TreeNode(a[index]);
             index++;
-            root.leftChild = CreateBTree(a);
+            root.left = CreateBTree(a);
             index++;
-            root.rightChild = CreateBTree(a);
+            root.right = CreateBTree(a);
         }
         return root;
 
@@ -45,9 +45,9 @@ public class BinaryTree {
         if (node == null) {
             return;
         }
-        System.out.println(node.data);
-        minOrderTra(node.leftChild);
-        minOrderTra(node.rightChild);
+        System.out.println(node.val);
+        minOrderTra(node.left);
+        minOrderTra(node.right);
     }
 
     public static void levelTra(TreeNode node) {
@@ -55,12 +55,12 @@ public class BinaryTree {
         queue.offer(node);
         while (!queue.isEmpty()) {
             TreeNode leaf = queue.poll();
-            System.out.println(leaf.data);
-            if (leaf.leftChild != null) {
-                queue.offer(leaf.leftChild);
+            System.out.println(leaf.val);
+            if (leaf.left != null) {
+                queue.offer(leaf.left);
             }
-            if (leaf.rightChild != null) {
-                queue.offer(leaf.rightChild);
+            if (leaf.right != null) {
+                queue.offer(leaf.right);
             }
         }
     }

@@ -25,12 +25,12 @@ public class BinarySortTree {
         if (node == null) {
             return new TreeNode(data);
         }
-        if (data < node.data) {
-            node.leftChild = insert(node.leftChild, data);
-        } else if (data > node.data) {
-            node.rightChild = insert(node.rightChild, data);
+        if (data < node.val) {
+            node.left = insert(node.left, data);
+        } else if (data > node.val) {
+            node.right = insert(node.right, data);
         } else {
-            node.data = data;
+            node.val = data;
         }
         return node;
     }
@@ -42,9 +42,9 @@ public class BinarySortTree {
         if (node == null) {
             return;
         }
-        System.out.print(node.data + " ");
-        preOrderTra(node.leftChild);
-        preOrderTra(node.rightChild);
+        System.out.print(node.val + " ");
+        preOrderTra(node.left);
+        preOrderTra(node.right);
     }
 
     /**
@@ -54,9 +54,9 @@ public class BinarySortTree {
         if (node == null) {
             return;
         }
-        midOrderTra(node.leftChild);
-        System.out.print(node.data + " ");
-        midOrderTra(node.rightChild);
+        midOrderTra(node.left);
+        System.out.print(node.val + " ");
+        midOrderTra(node.right);
     }
 
     /**
@@ -66,9 +66,9 @@ public class BinarySortTree {
         if (node == null) {
             return;
         }
-        postOrderTra(node.leftChild);
-        postOrderTra(node.rightChild);
-        System.out.print(node.data + " ");
+        postOrderTra(node.left);
+        postOrderTra(node.right);
+        System.out.print(node.val + " ");
     }
 
     /**
@@ -79,12 +79,12 @@ public class BinarySortTree {
         queue.offer(node);
         while (!queue.isEmpty()) {
             TreeNode leaf = queue.poll();
-            System.out.print(leaf.data + " ");
-            if (leaf.leftChild != null) {
-                queue.offer(leaf.leftChild);
+            System.out.print(leaf.val + " ");
+            if (leaf.left != null) {
+                queue.offer(leaf.left);
             }
-            if (leaf.rightChild != null) {
-                queue.offer(leaf.rightChild);
+            if (leaf.right != null) {
+                queue.offer(leaf.right);
             }
         }
     }

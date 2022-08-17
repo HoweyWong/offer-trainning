@@ -13,16 +13,16 @@ import java.util.Queue;
 public class IsValidBST {
     static boolean isValidBst(TreeNode root) {
         while (root != null) {
-            if (root.leftChild != null) {
-                if (root.leftChild.data < root.data) {
-                    root = root.leftChild;
+            if (root.left != null) {
+                if (root.left.val < root.val) {
+                    root = root.left;
                 } else {
                     return false;
                 }
             }
-            if (root.rightChild != null) {
-                if (root.rightChild.data > root.data) {
-                    root = root.rightChild;
+            if (root.right != null) {
+                if (root.right.val > root.val) {
+                    root = root.right;
                 } else {
                     return false;
                 }
@@ -39,10 +39,10 @@ public class IsValidBST {
         if (node == null) {
             return true;
         }
-        if (node.data < low || node.data > high) {
+        if (node.val < low || node.val > high) {
             return false;
         }
-        return isValidBstOpz(node.leftChild, low, node.data) && isValidBstOpz(node.rightChild, node.data, high);
+        return isValidBstOpz(node.left, low, node.val) && isValidBstOpz(node.right, node.val, high);
     }
 
     static boolean isValidBstOpzBft(TreeNode root) {
@@ -50,18 +50,18 @@ public class IsValidBST {
         queue.offer(root);
         while (!queue.isEmpty()) {
             TreeNode node = queue.poll();
-            if (node.leftChild != null) {
-                if (node.leftChild.data >= node.data) {
+            if (node.left != null) {
+                if (node.left.val >= node.val) {
                     return false;
                 } else {
-                    queue.offer(node.leftChild);
+                    queue.offer(node.left);
                 }
             }
-            if (node.rightChild != null) {
-                if (node.rightChild.data <= node.data) {
+            if (node.right != null) {
+                if (node.right.val <= node.val) {
                     return false;
                 } else {
-                    queue.offer(node.rightChild);
+                    queue.offer(node.right);
                 }
             }
         }

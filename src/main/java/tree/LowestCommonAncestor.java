@@ -31,12 +31,12 @@ public class LowestCommonAncestor {
     private static List<TreeNode> getPath(TreeNode root, TreeNode target) {
         ArrayList<TreeNode> list = new ArrayList<>();
         TreeNode node = root;
-        while (node.data != target.data) {
-            if (target.data < node.data) {
-                node = node.leftChild;
+        while (node.val != target.val) {
+            if (target.val < node.val) {
+                node = node.left;
                 list.add(node);
-            } else if (target.data > node.data) {
-                node = node.rightChild;
+            } else if (target.val > node.val) {
+                node = node.right;
                 list.add(node);
             }
         }
