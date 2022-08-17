@@ -13,6 +13,7 @@ import java.util.Queue;
 public class DeepestLeavesSum {
     /**
      * 解法一：层序遍历（广度优先遍历）遍历到最后一层就是答案，不需要去判断
+     * 注意：层序遍历是自身没有分层，需要对当前层做个隔离，通过size做for循环
      */
     public int deepestLeavesSumBfs(TreeNode root) {
         Queue<TreeNode> nodes = new ArrayDeque<>();
@@ -39,6 +40,8 @@ public class DeepestLeavesSum {
 
     /**
      * 解法二：深度遍历，遍历所有节点，记下层数
+     * 注意：当层数相等时，累计数值；
+     * 层数大于最大值，说明当前层有可能才是最深层，替换之，替换后遇到层数相同的继续上一步，累计。
      */
     public int deepestLeavesSumDfs(TreeNode root) {
         dfs(root, 0);
