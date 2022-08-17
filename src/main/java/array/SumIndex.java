@@ -16,6 +16,9 @@ public class SumIndex {
         System.out.println(Arrays.toString(twoSum(arr, 5)));
     }
 
+    /**
+     * 前提是只有一种答案，假如是重复值的，除非是这两者就是答案，否则不会用上
+     */
     public static int[] twoSum(int[] nums, int target) {
         // 数组的值作为map的key，Index作为value
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
