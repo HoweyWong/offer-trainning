@@ -1,4 +1,4 @@
-package design.pattern.strategy;
+package design.pattern.strategy.javapattern;
 
 /**
  * 关键是changeStrategy提供了一个动态传入策略，并更改为对应策略的方法

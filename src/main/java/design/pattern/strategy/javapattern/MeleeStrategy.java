@@ -1,9 +1,8 @@
-package design.pattern.strategy;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+package design.pattern.strategy.javapattern;
 
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @Description

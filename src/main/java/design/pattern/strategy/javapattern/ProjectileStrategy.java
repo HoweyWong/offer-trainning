@@ -1,4 +1,4 @@
-package design.pattern.strategy;
+package design.pattern.strategy.javapattern;
 
 import lombok.extern.slf4j.Slf4j;
 

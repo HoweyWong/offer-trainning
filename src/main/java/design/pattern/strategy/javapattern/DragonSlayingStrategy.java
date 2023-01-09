@@ -1,4 +1,4 @@
-package design.pattern.strategy;
+package design.pattern.strategy.javapattern;
 
 /**
  * @Description
