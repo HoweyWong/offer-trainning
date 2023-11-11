@@ -1,4 +1,4 @@
-package design.pattern.beverage;
+package design.pattern.decorator.beverage;
 
 public class StarbuzzCoffeeApp {
     public static void main(String[] args) {

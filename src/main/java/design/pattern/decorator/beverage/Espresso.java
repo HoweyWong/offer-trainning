@@ -1,4 +1,4 @@
-package design.pattern.beverage;
+package design.pattern.decorator.beverage;
 
 public class Espresso extends Beverage {
     @Override
