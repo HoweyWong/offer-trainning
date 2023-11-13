@@ -9,11 +9,12 @@ package design.pattern.decorator;
  */
 public class App {
     public static void main(String[] args) {
+        // decorate with simple
         SimpleTroll simpleTroll = new SimpleTroll();
         simpleTroll.attack();
         simpleTroll.fleeBattle();
         simpleTroll.getAttackPower();
-
+        // add decorate clubbled
         var clubbedTroll = new ClubbedTroll(simpleTroll);
         clubbedTroll.attack();
         clubbedTroll.fleeBattle();
