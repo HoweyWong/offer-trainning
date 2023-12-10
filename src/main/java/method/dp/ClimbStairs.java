@@ -1,5 +1,8 @@
 package method.dp;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 爬楼梯 动态规划
  *
@@ -16,6 +19,7 @@ public class ClimbStairs {
      * f(4) = 5;
      * f(5) = 8;
      * 正好是前两项之和，符合斐波那契数列规律
+     * 自底向上
      */
     public int climbStairs(int n) {
         int p = 0, q = 1;
@@ -31,5 +35,24 @@ public class ClimbStairs {
     public static void main(String[] args) {
         ClimbStairs c = new ClimbStairs();
         System.out.println(c.climbStairs(4));
+    }
+
+    private Map<Integer, Integer> result = new HashMap<>();
+
+    // 自顶向下+缓存，优化效率
+    public int climbStairsNew(int n) {
+        if (n < 1 || n > 45) {
+            return -1;
+        }
+        if (n == 1) {
+            return 1;
+        }
+        if (n == 2) {
+            return 2;
+        }
+        if (!result.containsKey(n)) {
+            result.put(n, climbStairsNew(n - 1) + climbStairsNew(n - 2));
+        }
+        return result.get(n);
     }
 }
