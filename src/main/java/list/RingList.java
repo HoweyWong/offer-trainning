@@ -7,12 +7,12 @@ package list;
  * @Version 1.0
  */
 public class RingList {
-    public Boolean isRing(Node head) {
+    public Boolean isRing(SimpleNode head) {
         if (head == null) {
             return false;
         }
-        Node slow = head;
-        Node fast = head;
+        SimpleNode slow = head;
+        SimpleNode fast = head;
         while (fast != null && fast.next != null) {
             if (slow == fast) {
                 return true;
@@ -26,10 +26,10 @@ public class RingList {
     }
 
     public static void main(String[] args) {
-        Node node1 = new Node(1, "张三");
-        Node node2 = new Node(2, "李四");
-        Node node3 = new Node(3, "王五");
-        Node node4 = new Node(4, "张三");
+        SimpleNode node1 = new SimpleNode(1, "张三");
+        SimpleNode node2 = new SimpleNode(2, "李四");
+        SimpleNode node3 = new SimpleNode(3, "王五");
+        SimpleNode node4 = new SimpleNode(4, "张三");
         node1.next = node2;
         node2.next = node3;
         node3.next = node4;
@@ -39,13 +39,3 @@ public class RingList {
     }
 }
 
-class Node {
-    int id;
-    String name;
-    Node next;
-
-    public Node(int id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-}
