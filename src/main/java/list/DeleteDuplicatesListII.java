@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 链表删除重复数据2
+ * 链表删除重复数据2：无序链表，需要一个存储空间；
  *
  * @author huanghao
  * @version 1.0

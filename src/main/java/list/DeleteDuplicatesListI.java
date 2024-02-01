@@ -1,7 +1,7 @@
 package list;
 
 /**
- * 删除重复数据
+ * 删除重复数据：顺序链表，重复的位置是固定的，不需要另外存放。每个元素仅出现一次
  *
  * @author huanghao
  * @version 1.0
