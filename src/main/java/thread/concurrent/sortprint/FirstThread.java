@@ -1,4 +1,4 @@
-package thread.concurrent;
+package thread.concurrent.sortprint;
 
 /**
  * @Description
