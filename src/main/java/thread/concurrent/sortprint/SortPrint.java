@@ -3,7 +3,7 @@ package thread.concurrent.sortprint;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * @Description 按序打印
+ * @Description 按序打印，利用原子对象的变化，控制线程 AtomicInteger firstJobDone\secondJobDone
  * @Author huanghao
  * @Date 2022-3-8
  * @Version 1.0
@@ -14,34 +14,34 @@ public class SortPrint {
         FirstThread firstThread = new FirstThread();
         SecondThread secondThread = new SecondThread();
         ThirdThread thirdThread = new ThirdThread();
-        Runnable printFirst = ()->{
+        Runnable printFirst = () -> {
             System.out.println("1");
         };
-        Runnable printSecond = ()->{
+        Runnable printSecond = () -> {
             System.out.println("2");
         };
-        Runnable printThird = ()->{
+        Runnable printThird = () -> {
             System.out.println("3");
         };
         foo.first(firstThread);
         foo.second(secondThread);
         foo.third(thirdThread);
         System.out.println();
-        new Thread(()->{
+        new Thread(() -> {
             try {
                 foo.first(printFirst);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }).start();
-        new Thread(()->{
+        new Thread(() -> {
             try {
                 foo.first(printSecond);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }).start();
-        new Thread(()->{
+        new Thread(() -> {
             try {
                 foo.first(printThird);
             } catch (InterruptedException e) {
