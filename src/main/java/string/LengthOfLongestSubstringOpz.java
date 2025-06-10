@@ -11,22 +11,27 @@ import java.util.Set;
  *      双指针，滑动窗口优化，减少了循环次数，更清晰
  */
 public class LengthOfLongestSubstringOpz {
+    /**
+     * 输入: s = "pwwkew"
+     * 输出: 3
+     * 解释: 因为无重复字符的最长子串是 "wke"，所以其长度为 3。
+     */
     public int lengthOfLongestSubstring(String s){
-        int maxLength = 0;
-        char[] chars = s.toCharArray();
-        int charLength = chars.length;
-        Set<Character> existCharSet = new HashSet<>(charLength);
-        int rt = 0;
-        for (int i = 0; i < charLength; i++) {
-            char c=chars[i];
-            while (rt<charLength&&!existCharSet.contains(chars[rt])){
-                existCharSet.add(chars[rt]);
+        int sl = s.length();
+        int maxL = 0 , rt = 0;
+        // 重复判断
+        Set<Character> existChars = new HashSet<>();
+        for(int i = 0;i < sl; i++){
+            // i，rt双指针滑动
+            while(rt<sl && !existChars.contains(s.charAt(rt))){
+                existChars.add(s.charAt(rt));
                 rt++;
             }
-            existCharSet.remove(c);
-            maxLength = Math.max(maxLength, rt-i);
+            // 获得最大长度
+            maxL = Math.max(maxL,rt-i);
+            existChars.remove(s.charAt(i));
         }
-        return maxLength;
+        return maxL;
     }
 
 
