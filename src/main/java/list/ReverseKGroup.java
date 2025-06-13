@@ -51,6 +51,8 @@ public class ReverseKGroup {
     }
 
     public static void main(String[] args) {
+        ThreadLocal<Integer> local = new ThreadLocal<>();
+        local.set(2);
         ListNode node = ListNode.fill(5);
         ListNode.print(node);
         ListNode.print(reverseKGroup(node, 2));
